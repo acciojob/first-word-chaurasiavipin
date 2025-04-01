@@ -1,16 +1,17 @@
 function firstWord(s) {
-    s = s.trim(); // Remove leading/trailing spaces
+    s = s.trim(); // Remove extra spaces
 
-    let spaceIndex = s.indexOf(' '); // Find first space
+    let firstWord = ""; // Store the first word
 
-    if (spaceIndex === -1) {
-        return s; // No space, return the whole string
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === " ") {
+            return firstWord; // Return the word when we hit a space
+        }
+        firstWord += s[i]; // Append characters to the word
     }
 
-    return s.substring(0, spaceIndex); // Extract first word
+    return firstWord; // Return the entire string if no space is found
 }
-
-
 // Do not change the code below
 
 //
